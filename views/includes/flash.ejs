@@ -1,0 +1,66 @@
+ <%if(success && success.length){%><!-- when the success message exists and the length of the success message is minimum one then 
+    the below code will get executed -->
+    <div class="alert alert-success alert-dismissible fade show col-6 offset-3" role="alert"><!-- using bootstrap alerts for this -->
+        <%= success %>
+
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+
+      </div>
+<%}%>
+
+
+ <%if(deletemsg && deletemsg.length){%><!-- when the success message exists and the length of the success message is minimum one then 
+    the below code will get executed -->
+    <div class="alert alert-danger alert-dismissible fade show col-6 offset-3" role="alert"><!-- using bootstrap alerts for this -->
+        <%= deletemsg %>
+
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+
+      </div>
+<%}%>
+
+ <%if(editmsg && editmsg.length){%><!-- when the success message exists and the length of the success message is minimum one then 
+    the below code will get executed -->
+    <div class="alert alert-info alert-dismissible fade show col-6 offset-3" role="alert"><!-- using bootstrap alerts for this -->
+        <%= editmsg %>
+
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+
+      </div>
+<%}%>
+
+
+ <%if(reviewmsg && reviewmsg.length){%><!-- when the success message exists and the length of the success message is minimum one then 
+    the below code will get executed -->
+    <div class="alert alert-primary alert-dismissible fade show col-6 offset-3" role="alert"><!-- using bootstrap alerts for this -->
+        <%= reviewmsg %>
+
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+
+      </div>
+<%}%>
+
+
+ <%if(reviewdeletemsg && reviewdeletemsg.length){%><!-- when the success message exists and the length of the success message is minimum one then 
+    the below code will get executed -->
+    <div class="alert alert-warning alert-dismissible fade show col-6 offset-3" role="alert"><!-- using bootstrap alerts for this -->
+        <%= reviewdeletemsg %>
+
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+
+      </div>
+<%}%>
+
+<%if(errormsg && errormsg.length){%><!-- when the success message exists and the length of the success message is minimum one then 
+    the below code will get executed -->
+    <div class="alert alert-danger alert-dismissible fade show col-6 offset-3" role="alert"><!-- using bootstrap alerts for this -->
+        <%= errormsg %>
+
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+
+      </div>
+<%}%>
+
+
+
+

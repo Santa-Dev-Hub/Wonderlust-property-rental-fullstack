@@ -1,0 +1,75 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+  <div id="filters" class="" style="margin-top: 1.5rem;">
+
+    <div id="filter">
+     <div class="center-items"><i class="fa-solid fa-fire"></i></div>
+      <p>Trending</p>
+    </div>
+    <div id="filter">
+      <div class="center-items"><i class="fa-solid fa-bed"></i></div>
+       <p>Rooms</p>
+     </div>
+    <div id="filter">
+      <div class="center-items"><i class="fa-solid fa-water-ladder"></i></div>
+       <p>Pools</p>
+     </div>
+    <div id="filter">
+      <div class="center-items"><i class="fa-solid fa-wheat-awn"></i></div>
+       <p>Farms</p>
+     </div>
+    <div id="filter">
+      <div class="center-items"><i class="fa-solid fa-umbrella-beach"></i></div>
+       <p>Beach</p>
+     </div>
+    <div id="filter">
+      <div class="center-items"><i class="fa-solid fa-mountain-sun"></i></div>
+       <p>Amazing Views</p>
+     </div>
+    <div id="filter">
+      <div style="margin-left: 0.5rem;"><i class="fa-solid fa-water"></i></div>
+       <p>Lake</p>
+     </div>
+    <div id="filter">
+      <div style="margin-left: 0.5rem;"><i class="fa-regular fa-snowflake"></i></div>
+       <p>Artic</p>
+     </div>
+     <div class="tax-switch">
+      <div class="form-check-reverse form-switch">
+        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Display total after Taxes</label>
+      </div>
+     </div>
+    
+
+  </div>
+    <h2 id="alllistingsheading" class="mt-4">All listings</h2>
+
+
+    <div class=" row row-cols-lg-4 row-cols-md-2 row-cols-sm-1">
+      <% for (let list of alllistings) { %>
+        <a href="/listings/<%= list._id  %>" class="listing_links mt-3">
+        <div class="card" style="width: 16rem;">
+          <% if (list.image && list.image.url) { %>
+            <img src="<%= list.image.url %>" class="card-img-top" alt="listing_image" style="height: 15rem !important;">
+        <% } else { %>
+            <img src="https://img.freepik.com/free-vector/404-error-with-landscape-concept-illustration_114360-7898.jpg?t=st=1719387944~exp=1719391544~hmac=e3d4471f8f9ebd2a03c0d0cf368acb79d9f29526314f346940a63823d1698e0d&w=996" class="card-img-top" alt="placeholder_image">
+        <% } %>
+        <div class="card-img-overlay"></div>
+            <div class="card-body">
+              <h5 class="card-text"><b><%= list.title  %></b></h5>
+              <p><%= list.price.toLocaleString("en-IN")  %>/night <i style="display: none;" class="hidegst"> &nbsp; &nbsp; +18%GST</i></p>
+              
+            </div>
+          </div>
+        </a>
+          <%}%>
+    </div>
+    
+
+    <ul>
+
+    </ul>
+
+    <script src="/js/javascript.js"></script>
+</body>

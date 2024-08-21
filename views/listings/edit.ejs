@@ -1,0 +1,98 @@
+<% layout("/layouts/boilerplate") %>
+
+  <body>
+    <h2 style="margin-left: 8rem; margin-top: 2rem; margin-bottom: 1rem;">Edit This listing :</h2>
+    <h4 style="margin-left: 8rem;">
+      <%= listingtobeedited.title %>
+    </h4>
+    <form action="/listings/<%= listingtobeedited._id%>" method="post" id="newform" class=" needs-validation" novalidate
+      enctype="multipart/form-data">
+      <div>
+        <label for="title" class="form-label">Title</label>
+        <input type="text" name="title" value="<%= listingtobeedited.title  %>" class="form-control" required>
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+        <div class="invalid-feedback">
+          Invalid Title
+        </div>
+      </div>
+
+      <br>
+      <br>
+
+      <div>
+        <label for="description" class="form-label">Description</label>
+        <textarea name="description" class="form-control" required><%= listingtobeedited.description  %> </textarea>
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+        <div class="invalid-feedback">
+          Please Enter a valid description
+        </div>
+      </div>
+      <br>
+      <br>
+      <div class="mb-3">
+        Original Listing Image: <br>
+        <img src="<%= originalimageUrl %>" alt="Original Listing Image">
+      </div>
+      <div>
+        <label for="image" class="form-label">Upload New Image</label>
+        <input type="file" name="listing[image]" value="<%= listingtobeedited.image.url  %>" class="form-control">
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+
+      </div>
+      <br>
+      <br>
+
+      <div class="row">
+        <div class="mb-3 col-md-4">
+          <label for="price" class="form-label">Price</label>
+          <input type="text" name="price" value="<%= listingtobeedited.price  %>" class="form-control" required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+          <div class="invalid-feedback">
+            Invalid Price
+          </div>
+        </div>
+
+        <br>
+        <br>
+
+        <div class="mb-3 col-md-8">
+          <label for="title" class="form-label">Location</label>
+          <input type="text" name="location" value="<%= listingtobeedited.location  %>" class="form-control" required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+          <div class="invalid-feedback">
+            Invalid Location
+          </div>
+        </div>
+      </div>
+      <br>
+      <br>
+
+      <div>
+        <label for="title" class="form-label">Country</label>
+        <input type="text" name="country" value="<%= listingtobeedited.country  %>" class="form-control" required>
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+        <div class="invalid-feedback">
+          Invalid Country Name
+        </div>
+      </div>
+      <br>
+      <br>
+      <button type="submit" class="btn btn-dark" style="display: block; margin: 0 auto;">EDIT</button>
+      <br>
+      <br>
+    </form>
+    <script src="/js/javascript.js"></script>
+    <script src="/js/map.js"></script>
+  </body>

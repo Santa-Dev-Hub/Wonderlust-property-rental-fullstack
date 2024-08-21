@@ -1,0 +1,83 @@
+<% layout("/layouts/boilerplate") %>
+
+    <body>
+        <h2 style="margin-left: 8rem;margin-top: 2rem;">Create a new Listing :</h2>
+        <h3 style="margin-left: 8rem;">Please enter the following details</h3>
+        <form action="/listings/new" method="post"  id="newform" class=" needs-validation" novalidate enctype="multipart/form-data">
+            <div>
+                <label for="title" class="form-label">Title</label>
+                <input type="text" name="title" placeholder="Enter Title" class="form-control" required>
+                <div class="valid-feedback">
+                    Title Looks Good!
+                  </div>
+                  <div class="invalid-feedback">
+                   Enter title
+                  </div>
+            </div>
+
+            <br>
+            <br>
+
+            <div>
+                <label for="description" class="form-label">Description</label>
+                <textarea name="description" placeholder="Enter the description" class="form-control" required></textarea>
+                <div class="invalid-feedback">
+                    Invalid Description
+                  </div>
+            </div>
+            <br>
+            <br>
+
+            <div>
+                <label for="image" class="form-label">Upload Listing Image</label>
+                <input type="file" name="listing[image]" class="form-control" required>
+                <div class="valid-feedback">
+                    File looks good!
+                  </div>
+            </div>
+            <br>
+            <br>
+
+            <div>
+                <label for="price" class="form-label">Price</label>
+                <input type="text" name="price" placeholder="Enter the Price" class="form-control" required>
+                <div class="invalid-feedback">
+                    Price should be valid!
+                  </div>
+                  <div class="valid-feedback">
+                    Valid
+                  </div>
+            </div>
+
+            <br>
+            <br>
+
+            <div>
+              <label for="location" class="form-label">Location</label>
+              <input type="text" name="location" id="location-input" placeholder="Enter the Location" class="form-control" required>
+              <div class="valid-feedback">Looks good!</div>
+              <div class="invalid-feedback">Invalid Location</div>
+          </div>
+
+            <br>
+            <br>
+
+            <!-- <div>
+                <label for="title" class="form-label" >Country</label>
+                <input type="text" name="country" placeholder="Enter the Country" class="form-control" required>
+                <div class="invalid-feedback">
+                    Enter a valid country name
+                  </div>
+                  <div class="valid-feedback">
+                    Country name looks good!
+                  </div>
+            </div> -->
+            <br>
+            <br>
+            <button type="submit" class="btn btn-dark" style="display: block; margin: 0 auto;">SUBMIT</button>
+            <br>
+            <br>
+        </form>
+        <script src="/js/map.js"></script>
+        <script src="/js/javascript.js"></script>
+    </body>
