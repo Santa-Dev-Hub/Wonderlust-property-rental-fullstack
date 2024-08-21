@@ -4,7 +4,8 @@
   "description": "This is the folder for my major project . In this i will build a AIRBNB web application where users can add their prorties for sale or for rent and other users can buy or rent it.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
   },
   "engines": {
     "node": "20.12.0"
