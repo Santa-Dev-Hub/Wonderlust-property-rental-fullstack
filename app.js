@@ -107,9 +107,11 @@ app.use(methodOverride('_method'));
 
 
 
-app.listen(3000,()=>{
-    console.log("Listening to port 3000");
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+    console.log(`Listening to port ${port}`);
 });
+
 
 //Below are the variables that we want to send with our res.render we can define them with like this as below
 app.use((req,res,next)=>{
@@ -201,9 +203,16 @@ app.use("/",userroute);
         
 
 // Root route
-// app.get("/listings", (req, res) => {
-//     res.send("Hi I am root");
-// });
+app.get('/', async (req, res) => {
+  try {
+    const listings = await listing.find({});
+    res.render('listings/alllistings', { alllistings: listings });
+  } catch (err) {
+    console.log(err);
+    res.status(500).send("Error fetching listings");
+  }
+});
+
 
         
 app.use((err,req,res,next)=>{
